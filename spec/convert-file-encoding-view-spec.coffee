@@ -1,4 +1,4 @@
-ConvertToUtf8View = require '../lib/convert-to-utf8-view'
+ConvertToUtf8View = require '../lib/convert-file-encoding-view'
 {WorkspaceView} = require 'atom'
 
 describe "ConvertToUtf8View", ->

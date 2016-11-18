@@ -1,4 +1,4 @@
-ConvertToUtf8 = require '../lib/convert-to-utf8'
+ConvertToUtf8 = require '../lib/convert-file-encoding'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
@@ -12,18 +12,18 @@ describe "ConvertToUtf8", ->
     atom.workspaceView = new WorkspaceView
     activationPromise = atom.packages.activatePackage('convertToUtf8')
 
-  describe "when the convert-to-utf8:toggle event is triggered", ->
+  describe "when the convert-file-encoding:toggle event is triggered", ->
     it "attaches and then detaches the view", ->
-      expect(atom.workspaceView.find('.convert-to-utf8')).not.toExist()
+      expect(atom.workspaceView.find('.convert-file-encoding')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.workspaceView.trigger 'convert-to-utf8:toggle'
+      atom.workspaceView.trigger 'convert-file-encoding:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(atom.workspaceView.find('.convert-to-utf8')).toExist()
-        atom.workspaceView.trigger 'convert-to-utf8:toggle'
-        expect(atom.workspaceView.find('.convert-to-utf8')).not.toExist()
+        expect(atom.workspaceView.find('.convert-file-encoding')).toExist()
+        atom.workspaceView.trigger 'convert-file-encoding:toggle'
+        expect(atom.workspaceView.find('.convert-file-encoding')).not.toExist()
