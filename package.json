@@ -1,7 +1,7 @@
 {
   "name": "convert-file-encoding",
   "main": "./lib/convert-file-encoding",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Convert File Encoding package for saving files in a different encoding.",
   "activationCommands": {
     "atom-workspace": [

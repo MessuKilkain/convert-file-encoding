@@ -16,42 +16,17 @@ module.exports =
   convertTo: (encoding) ->
     editor = atom.workspace?.getActiveTextEditor()
     if not editor?
-      #error
+      console.error("no editor")
       return
-    encoding = editor.getEncoding()
     path = editor.getPath()
     if not path?
-      #error
+      console.error("no path")
       return
-    convertedText = iconv.encode editor.getText, encoding
+    originalText = editor.getText()
+    convertedText = iconv.encode editor.getText(), encoding
     if not convertedText?
-      #error
+      console.error("no convertedText")
       return
-    fs.writeFileSync( uri, convertedText )
-
-  open: (encoding) ->
-    editor = atom.workspace?.getActiveTextEditor()
-    if not editor?
-      #error
-      return
-    encoding = editor.getEncoding()
-    path = editor.getPath()
-    if not path?
-      #error
-      return
-    buffer = fs.readFileSync(path)
-    if not buffer?
-      #error
-      return
-    convertedText = iconv.decode buffer, encoding
-    editor.setText convertedText
-    # atom.workspace.saveActivePaneItem()
-
-  save: (encoding) ->
-    workspace = atom.workspace
-    editor = workspace.getActiveTextEditor()
-    path = editor.getPath()
-    buffer = fs.readFileSync(path)
-    data = buffer.toString 'UTF8'
-    buf = iconv.encode data, encoding
-    fs.writeFileSync( uri, buf )
+    fs.writeFileSync( path, convertedText )
+    editor.setEncoding(encoding)
+    editor.setText(originalText)
