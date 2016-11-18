@@ -10,7 +10,7 @@ describe "ConvertToUtf8", ->
 
   beforeEach ->
     atom.workspaceView = new WorkspaceView
-    activationPromise = atom.packages.activatePackage('convertToUtf8')
+    activationPromise = atom.packages.activatePackage('convert-file-encoding')
 
   describe "when the convert-file-encoding:toggle event is triggered", ->
     it "attaches and then detaches the view", ->
