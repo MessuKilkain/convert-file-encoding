@@ -5,6 +5,13 @@
   "description": "Convert File Encoding package for saving files in a different encoding.",
   "activationCommands": {
     "atom-workspace": [
+      "convert-file-encoding:shift_jis",
+      "convert-file-encoding:euc-jp",
+      "convert-file-encoding:cp932",
+      "convert-file-encoding:gbk",
+      "convert-file-encoding:big5",
+      "convert-file-encoding:big5-hkscs",
+      "convert-file-encoding:euc-kr",
       "convert-file-encoding:utf-8",
       "convert-file-encoding:utf16le"
     ]
