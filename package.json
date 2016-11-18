@@ -1,20 +1,22 @@
 {
-  "name": "convert-to-utf8",
-  "main": "./lib/convert-to-utf8",
-  "version": "0.2.4",
-  "description": "ConvertToUTF8 package for editing and saving files encoded in Shift_JIS, EUC-JP, CP932, GBK, BIG5, BIG5-HKSCS, EUC-KR etc",
+  "name": "convert-file-encoding",
+  "main": "./lib/convert-file-encoding",
+  "version": "0.0.0",
+  "description": "Convert File Encoding package for saving files in a different encoding.",
   "activationCommands": {
     "atom-workspace": [
-      "convert-to-utf8:shift_jis",
-      "convert-to-utf8:euc-jp",
-      "convert-to-utf8:gbk",
-      "convert-to-utf8:big5",
-      "convert-to-utf8:big5-hkscs",
-      "convert-to-utf8:euc-kr",
-      "convert-to-utf8:utf-8"
+      "convert-file-encoding:shift_jis",
+      "convert-file-encoding:euc-jp",
+      "convert-file-encoding:cp932",
+      "convert-file-encoding:gbk",
+      "convert-file-encoding:big5",
+      "convert-file-encoding:big5-hkscs",
+      "convert-file-encoding:euc-kr",
+      "convert-file-encoding:utf-8",
+      "convert-file-encoding:utf16le"
     ]
   },
-  "repository": "https://github.com/dongri/convert-to-utf8",
+  "repository": "https://github.com/MessuKilkain/convert-file-encoding",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
